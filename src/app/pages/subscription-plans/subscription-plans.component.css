@@ -1,0 +1,18 @@
+.selected-plan {
+    border-color: #3490dc; /* Change border color to your desired highlight color */
+    box-shadow: 0 0 10px rgba(52, 144, 220, 0.5); /* Add a subtle box shadow for emphasis */
+  }
+  
+  .selected-plan h2 {
+    background-color: #e5e7eb; /* Change background color for the plan name */
+  }
+  
+  .selected-plan button {
+    background-color: #3490dc; /* Change button background color for the selected plan */
+    color: #ffffff; /* Change button text color for the selected plan */
+  }
+  
+  .selected-plan button:hover {
+    background-color: #276c99; /* Change button background color on hover for the selected plan */
+  }
+  
