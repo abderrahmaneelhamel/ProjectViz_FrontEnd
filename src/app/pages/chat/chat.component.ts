@@ -21,7 +21,7 @@ export class ChatComponent implements OnInit{
   userPrompt: string = '';
   response!: response;
   loading: boolean = false;
-  maxCharacters: number = 100;
+  minCharacters: number = 50;
   user$!: Observable<User>;
   Conversations : conversation[] = [];
 
@@ -66,10 +66,10 @@ export class ChatComponent implements OnInit{
     const characterCount = this.userPrompt.length;
     const textarea = this.userPromptTextarea.nativeElement;
 
-    if (characterCount < this.maxCharacters) {
+    if (characterCount < this.minCharacters) {
       Swal.fire({
         title: 'Oops! Your prompt is a bit small.',
-        text: 'Please keep it over 100 characters to enable our AI model to generate an appropriate response.',
+        text: 'Please keep it over 50 characters to enable our AI model to generate an appropriate response.',
         icon: 'error',
       });
     } else {
@@ -93,8 +93,6 @@ export class ChatComponent implements OnInit{
                 text: 'You have reached the maximum number of conversations for this plan',
               });
               this.router.navigate(['/subscription-plans']);
-            }else{
-              this.submitPrompt();
             }
           });
         });
