@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',

@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChatBoxComponent } from './Components/chat-box/chat-box.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ChatComponent } from './pages/chat/chat.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -26,7 +25,6 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ChatBoxComponent,
     ChatComponent,
     DashboardComponent,
     PopupComponent,
