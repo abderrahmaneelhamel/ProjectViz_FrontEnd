@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { promptRequest } from 'src/app/Interfaces/PromptRequest';
 import { response } from 'src/app/Interfaces/response';
+import { environment } from 'src/app/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  private apiUrl = 'http://localhost:8080/bot/chat';
+  private apiUrl = environment.apiUrl+'/bot/chat';
 
   constructor(private http: HttpClient) {}
 

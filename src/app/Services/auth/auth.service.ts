@@ -6,12 +6,13 @@ import * as AuthActions from 'src/app/NGRX/auth.actions';
 import Swal from 'sweetalert2';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from 'src/app/Interfaces/user';
+import { environment } from 'src/app/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = "http://localhost:8080";
+  private apiUrl = environment.apiUrl;
   private jwtHelper = new JwtHelperService();
 
   constructor(
