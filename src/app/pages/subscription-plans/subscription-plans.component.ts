@@ -8,7 +8,6 @@ import { StripeService } from 'src/app/Services/StripeService/stripe.service';
 import { PopupComponent } from 'src/app/Components/popup/popup.component';
 import { User } from 'src/app/Interfaces/user';
 import { UserService } from 'src/app/Services/userService/user.service';
-import cli from '@angular/cli';
 
 @Component({
   selector: 'app-subscription-plans',
@@ -17,7 +16,7 @@ import cli from '@angular/cli';
 })
 export class SubscriptionPlansComponent implements OnInit {
   client!: User;
-  selectedPlan?: Plan;
+  selectedPlan?: number;
   PlanId: number = 0;
   card: any;
 
@@ -34,13 +33,8 @@ export class SubscriptionPlansComponent implements OnInit {
   ngOnInit() {
     this.store.select(selectLoggedInUser).subscribe((loggedInclient) => {
       if (loggedInclient) {
-        this.userService.getClient(loggedInclient.id!+1).subscribe((client) => {
-          this.client = client;
-          this.selectedPlan = client.plan;
-          console.log('====================================');
-          console.log(this.client,this.selectedPlan);
-          console.log('====================================');
-        })
+        this.client = loggedInclient;
+        this.selectedPlan = loggedInclient.plan;
       }
     });
   }
@@ -59,13 +53,13 @@ export class SubscriptionPlansComponent implements OnInit {
         .updateClientPlan(this.client.id!, this.PlanId, token.id)
         .subscribe(
           (updatedClient) => {
-            this.client = updatedClient;
-            this.selectedPlan = updatedClient.plan;
+            this.selectedPlan = this.PlanId;
             Swal.fire({
               icon: 'success',
               title: 'Success',
               text: 'Plan updated successfully',
             });
+            this.popupComponent.Toggle();
           },
           (error) => {
             Swal.fire({

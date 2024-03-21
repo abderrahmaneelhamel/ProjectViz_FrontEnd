@@ -7,11 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ChatComponent } from './pages/chat/chat.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PopupComponent } from './Components/popup/popup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SubscriptionPlansComponent } from './pages/subscription-plans/subscription-plans.component';
-import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
@@ -21,17 +19,19 @@ import { StoreModule } from '@ngrx/store';
 import { authReducer } from './NGRX/auth.reducer';
 import { CustomInterceptor } from './interceptor/costum.interceptor';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    DashboardComponent,
     PopupComponent,
     LoginComponent,
     SubscriptionPlansComponent,
-    UnauthorizedComponent,
     NavbarComponent,
+    HomeComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

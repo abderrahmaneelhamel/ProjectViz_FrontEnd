@@ -49,27 +49,15 @@ export class AuthService {
       email: decodedToken.email,
       plan: decodedToken.planId,
       password: '',
-      role: decodedToken.role.toLowerCase(),
     };
-    console.log('====================================');
-    console.log(user," - ",decodedToken);
-    console.log('====================================');
     this.store.dispatch(
       AuthActions.loginSuccess({
         user: user,
-        role : user.role,
         accessToken: response.access_token,
         refreshToken: response.refresh_token,
       })
     );
-    switch(user.role){
-      case 'admin':
-        this.router.navigate(['/dashboard']);
-        break;
-      case 'client':
-        this.router.navigate(['/']);
-        break;
-    }
+    this.router.navigate(['/chat']);
   }
 
   register(registerRequest: any) {

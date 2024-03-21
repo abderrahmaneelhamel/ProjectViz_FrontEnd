@@ -14,7 +14,7 @@ export class ChatService {
   constructor(private http: HttpClient) {}
 
   sendPrompt(prompt: promptRequest): Observable<response> {
-    prompt.userId = prompt.userId+1;
+    prompt.userId = prompt.userId;
     return this.http.post<any>(`${this.apiUrl}`, prompt);
   }
 }

@@ -1,9 +1,10 @@
-<nav class=" bg-white shadow fixed w-full top-0 left-0" [class.hidden]="navbarHidden">
-    <div class="container px-6 py-4 mx-auto">
+<nav class="bg-white shadow fixed w-full top-0 left-0 max-h-20 z-10" [class.hidden]="navbarHidden">
+    <div class="container px-6 flex flex-col justify-center  mx-auto">
         <div class="lg:flex lg:items-center lg:justify-between">
             <div class="flex items-center justify-between">
-                <a routerLink="/">
-                    <img class="w-auto h-28 sm:h-20" src="../../../assets/logo.png" alt="">
+                <a routerLink="/" class="flex justify-around items-center py-2">
+                    <img class="w-auto h-16 sm:h-16" src="../../../assets/logo.png" alt="">
+                    <span class="text-lg font-bold text-purple-800">ProjectViz</span>
                 </a>
                 <!-- Mobile menu button -->
                 <div class="flex lg:hidden">
@@ -21,25 +22,25 @@
 
             <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
                 <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
-                    <ng-container *ngIf="(authState$ | async) as authState">
-                      <ng-container *ngIf="authState.isAuthenticated && authState.role === 'admin'">
-                        <a routerLink="/dashboard" class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100">Dashboard</a>
+                    <ng-container>
+                      <ng-container>
+                        <a routerLink="/" [ngClass]="isRouteActive('/') ? 'border-purple-500 rounded-br-lg border-b-4 rounded-none' : ''" class="text-black rounded-md px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform lg:mt-0 hover:bg-gray-100">Home</a>
                       </ng-container>
                     </ng-container>
                     <ng-container *ngIf="(authState$ | async) as authState">
-                      <ng-container *ngIf="authState.isAuthenticated && authState.role === 'client'">
-                        <a routerLink="/subscription-plans" class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100">subscription plans</a>
+                      <ng-container *ngIf="authState.isAuthenticated">
+                        <a routerLink="/subscription-plans" [ngClass]="isRouteActive('/subscription-plans') ? 'border-purple-500 rounded-br-lg border-b-4 rounded-none' : ''" class="text-black rounded-md px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform lg:mt-0 hover:bg-gray-100">Subscription plans</a>
                       </ng-container>
                     </ng-container>
                   <ng-container *ngIf="(authState$ | async) as authState">
-                    <ng-container *ngIf="authState.isAuthenticated && authState.role === 'client'">
-                      <a routerLink="/" class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100">chat</a>
+                    <ng-container *ngIf="authState.isAuthenticated">
+                      <a routerLink="/chat" [ngClass]="isRouteActive('/chat') ? 'border-purple-500 rounded-br-lg border-b-4 rounded-none' : ''" class="text-black rounded-md px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform lg:mt-0 hover:bg-gray-100">Chat</a>
                     </ng-container>
                   </ng-container>
                 </div>
                 <ng-container *ngIf="(authState$ | async) as authState">
                     <div *ngIf="authState.isAuthenticated; else notAuthenticated" class="flex items-center">
-                      <button (click)="logout()" class="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none">Logout</button>
+                      <button (click)="logout()" class="bg-purple-500 text-white px-4 py-2 rounded focus:outline-none">Logout</button>
                     </div>
                     <ng-template #notAuthenticated>
                       <div class="flex items-center">

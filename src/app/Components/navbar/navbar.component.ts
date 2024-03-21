@@ -29,6 +29,10 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  isRouteActive(route: string): boolean {
+    return this.router.isActive(route, true);
+  }
+
   login() {
     this.router.navigate(['/login']);
   }

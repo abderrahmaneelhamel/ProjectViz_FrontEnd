@@ -15,19 +15,15 @@ export class UserService {
 
   updateClientPlan(clientId: number, planId: number, cardToken: string): Observable<User> {
     const credentials = {
-      clientId: clientId.toString(),
+      userId: clientId.toString(),
       planId: planId.toString(),
       cardToken: cardToken
     };
     return this.http.post<User>(`${this.apiUrl}/update-plan`, credentials);
   }
 
-  getClient(clientId: number): Observable<User>{
-    return this.http.get<User>(`${this.apiUrl}/client/${clientId}`);
-  }
-
   getConversations(clientId: number): Observable<conversation[]>{
-    return this.http.get<conversation[]>(`${this.apiUrl}/conversations/${clientId+1}`);
+    return this.http.get<conversation[]>(`${this.apiUrl}/conversations/${clientId}`);
   }
 
   deleteConversation(conversationId: number) {
