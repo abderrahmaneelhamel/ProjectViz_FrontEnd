@@ -25,7 +25,7 @@
 
       <!-- Desktop Menu -->
       <div class="hidden lg:flex lg:items-center lg:ml-4">
-        <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
+        <div class="flex flex-col -mx-9 lg:flex-row lg:items-center lg:mx-2">
           <ng-container *ngIf="(authState$ | async) as authState">
             <ng-container *ngIf="authState.isAuthenticated">
               <a routerLink="/" [ngClass]="isRouteActive('/') ? 'rounded-br-lg rounded-none' : ''"
@@ -36,23 +36,22 @@
             <ng-container *ngIf="authState.isAuthenticated">
               <a routerLink="/subscription-plans"
                 [ngClass]="isRouteActive('/subscription-plans') ? 'border-purple-500 rounded-br-lg border-b-4 rounded-none' : ''"
-                class="text-black rounded-md px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform lg:mt-0 hover:bg-gray-100">Subscription
+                class="text-black rounded-md px-3 py-2 mt-2 transition-colors duration-300 transform lg:mt-0 hover:bg-gray-100">Subscription
                 plans</a>
             </ng-container>
           </ng-container>
-          <ng-container *ngIf="(authState$ | async) as authState">
+          <!-- <ng-container *ngIf="(authState$ | async) as authState">
             <ng-container *ngIf="authState?.isAuthenticated">
               <a routerLink="/chat"
-                [ngClass]="isRouteActive('/chat') ? 'border-purple-500 rounded-br-lg border-b-4 rounded-none' : ''"
+                [ngClass]="isRouteActive('/chat') ? 'border-purple-500 rounded-br-lg border-b-2 rounded-none' : ''"
                 class="text-black rounded-md px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform lg:mt-0 hover:bg-gray-100">Chat</a>
             </ng-container>
-          </ng-container>
+          </ng-container> -->
         </div>
 
         <ng-container *ngIf="(authState$ | async) as authState">
           <div *ngIf="authState.isAuthenticated; else notAuthenticated" class="flex items-center">
-            <button (click)="logout()"
-              class="bg-purple-500 text-white px-4 py-2 rounded focus:outline-none">Logout</button>
+            <button (click)="logout()" class="pe-2 py-2 rounded focus:outline-none">Logout</button>
           </div>
           <ng-template #notAuthenticated>
             <div class="flex items-center">
@@ -63,10 +62,10 @@
         </ng-container>
 
 
-        <div *ngIf="(authState$ | async) as authState" class="mx-5 flex items-center mt-4 lg:mt-0">
+        <div *ngIf="(authState$ | async) as authState" class=" flex items-center mt-4 lg:mt-0">
           <button *ngIf="authState.isAuthenticated" type="button" class="flex items-center focus:outline-none"
             aria-label="Toggle Profile Dropdown" routerLink="/profile">
-            <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+            <div class="mx-5  w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
               <img
                 src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
                 class="object-cover w-full h-full" alt="avatar">
@@ -87,19 +86,19 @@
             [ngClass]="isRouteActive('/subscription-plans') ? 'block text-purple-800 border-b-2 border-purple-800 py-2' : 'block text-gray-600 hover:text-purple-800 py-2'">Subscription
             plans</a>
           <a routerLink="/chat"
-            [ngClass]="isRouteActive('/chat') ? 'block text-purple-800 border-b-2 border-purple-800 py-2' : 'block text-gray-600 hover:text-purple-800 py-2'">Chat</a>
+            [ngClass]="isRouteActive('/chat') ? 'block text-purple-800 border-purple-800 py-2' : 'block text-gray-600 hover:text-purple-800 py-2'">Chat</a>
           <!-- </ng-container> -->
         </ng-container>
 
         <ng-container *ngIf="(authState$ | async) as authState">
           <div *ngIf="authState.isAuthenticated; else notAuthenticated" class="mt-2">
             <button (click)="logout()"
-              class="block w-full text-left px-4 py-2 text-gray-600 hover:text-purple-800 focus:outline-none">Logout</button>
+              class="block py-2 text-gray-600 hover:text-purple-800 focus:outline-none pb-4">Logout</button>
           </div>
           <ng-template #notAuthenticated>
             <div class="mt-2">
               <button (click)="login()"
-                [ngClass]="isRouteActive('/chat') ? 'block text-purple-800 border-b-2 border-purple-800 py-2' : 'block text-gray-600 hover:text-purple-800 pb-4 '">Login</button>
+                [ngClass]="isRouteActive('/login') ? 'block text-purple-800 border-b-2 border-purple-800 py-2' : 'block text-gray-600 hover:text-purple-800 pb-4 '">Login</button>
             </div>
           </ng-template>
         </ng-container>
