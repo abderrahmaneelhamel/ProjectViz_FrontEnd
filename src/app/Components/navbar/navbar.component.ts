@@ -15,13 +15,15 @@ export class NavbarComponent implements OnInit {
   lastScrollPosition = 0;
   navbarHidden: boolean = false;
   authState$ = this.store.pipe(select(selectAuthState))
+  showMobileMenu: boolean = false;
+
 
   constructor(
     private store: Store,
     private router: Router,
     private cdr: ChangeDetectorRef,
-    private authService : AuthService
-  ) {}
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.authState$.subscribe(() => {
@@ -51,5 +53,8 @@ export class NavbarComponent implements OnInit {
     }
 
     this.lastScrollPosition = currentScrollPosition;
+  }
+   toggleMobileMenu(): void {
+    this.showMobileMenu = !this.showMobileMenu;
   }
 }

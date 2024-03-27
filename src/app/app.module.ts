@@ -20,7 +20,7 @@ import { authReducer } from './NGRX/auth.reducer';
 import { CustomInterceptor } from './interceptor/costum.interceptor';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
