@@ -2,19 +2,18 @@
   <div class="bg-white mt-20 p-8 w-1/5 hidden md:block">
     <h2 class="text-xl font-semibold mb-7 ">Conversations</h2>
     <ul>
-      <li *ngFor="let conversation of Conversations" class="flex justify-between cursor-pointer py-3 border-y border-gray-200 hover:bg-gray-200">
+      <li *ngFor="let conversation of Conversations"
+        class="flex justify-between cursor-pointer py-3 border-y border-gray-200 hover:bg-gray-200">
         <div (click)="selectConversation(conversation)">
           {{ conversation.prompt | slice:0:25 }}{{ conversation.prompt.length > 25 ? '...' : '' }}
         </div>
-        <img src="../../../assets/delete.png" 
-        (click)="deleteConversation(conversation.id)"
-        class="max-h-8">
+        <img src="../../../assets/delete.png" (click)="deleteConversation(conversation.id)" class="max-h-8">
       </li>
     </ul>
   </div>
 
   <div
-    class="w-full flex flex-col items-center justify-between min-h-screen  bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900 pt-24 ">
+    class="w-full flex flex-col items-center justify-between min-h-screen  bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 pt-24 ">
     <div class="w-full overflow-y-auto flex-grow pt-10">
       <div *ngIf="!response?.projectAnalysis && !loading" class="flex justify-center items-center ">
         <img src="../../../assets/undraw_analysis.svg" class="h-80 w-96 lg:w-max" alt="">
