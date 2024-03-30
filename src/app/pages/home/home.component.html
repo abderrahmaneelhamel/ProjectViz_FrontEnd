@@ -1,21 +1,27 @@
-<div class="flex flex-col mx-0 bg-white w-full px-4 py-10 md:px-8 md:py-16">
-            <div class="grid w-full grid-cols-1 my-auto mt-12 mb-8 md:grid-cols-2 xl:gap-14 md:gap-5">
-                <div class="flex flex-col justify-center col-span-1 text-center lg:text-start">
-                    <div class="flex items-center justify-center mb-4 lg:justify-normal">
-                        <img class="h-5" src="../../../assets/logo.png" alt="logo">
-                        <h4 class="ml-2 text-sm font-bold tracking-widest text-purple-800 uppercase">Explore the Latest AI powered WebSite</h4>
-                    </div>
-                    <h1 class="mb-8 text-4xl font-extrabold leading-tight lg:text-6xl text-dark-grey-900">Elevate, expand, Visualize your website Idea with ProjectViz</h1>
-                    <p class="mb-6 text-base font-normal leading-7 lg:w-3/4 text-grey-900">
-                        Say goodbye to endless hours spent on planing from scratch. Experience the quickest and trendiest planing and stucturing solution available. Seriously.
-                    </p>
-                    <div class="flex flex-col items-center gap-4 lg:flex-row">
-                        <a routerLink="/login" class="flex items-center py-4 text-sm font-bold text-white px-7 bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 transition duration-300 rounded-xl">Get started now</a>
-                    </div>
-                </div>
-                <div class="items-center justify-end hidden col-span-1 md:flex">
-                    <img class="w-4/5 rounded-md" src="https://raw.githubusercontent.com/Loopple/loopple-public-assets/main/motion-tailwind/img/header-1.png" alt="header image">
-                </div>
+<div class="container mt-8 md:mt-14 px-4 py-10 md:px-8 md:py-16">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 ">
+        <div class="flex flex-col justify-center text-center md:text-left">
+            <div class="flex items-center justify-center hidden lg:flex md:justify-start">
+                <img class="h-5" src="../../../assets/logo.png" alt="logo">
+                <h4 class="ml-2 text-sm font-bold tracking-widest text-purple-800 uppercase ">Explore the Latest AI
+                    powered Website</h4>
             </div>
+            <h1 class="mb-8 text-4xl font-extrabold mt-16 md:mt-5 lg:text-6xl text-dark-grey-900">Elevate,
+                expand,
+                Visualize your website Idea with ProjectViz</h1>
+            <p class="mb-6 text-base font-normal leading-7 md:w-3/4 text-grey-900">
+                Say goodbye to endless hours spent on planning from scratch. Experience the quickest and trendiest
+                planning and structuring solution available. Seriously.
+            </p>
+            <div class="flex flex-col items-center md:flex-row">
+                <a href="/login"
+                    class="flex items-center py-4 text-sm font-bold text-white px-7 bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 transition duration-300 rounded-xl">Get
+                    started now</a>
+            </div>
+        </div>
+        <div class="flex items-center justify-center md:justify-end lg:-me-24">
+            <img class="w-full md:h-4/5  rounded-md" src="/assets/header-image.svg" alt="header image">
+        </div>
+    </div>
 </div>
 <app-footer></app-footer>

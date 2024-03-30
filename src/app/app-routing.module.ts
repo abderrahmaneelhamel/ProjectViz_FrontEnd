@@ -7,17 +7,17 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: HomeComponent,
   },
-  { 
-    path: 'chat', 
+  {
+    path: 'chat',
     component: ChatComponent,
     canActivate: [AuthGuard],
   },
-  { 
-    path: '', 
+  {
+    path: '',
     component: ChatComponent,
     canActivate: [AuthGuard],
   },
