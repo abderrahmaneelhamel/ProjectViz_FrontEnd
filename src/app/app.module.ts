@@ -43,8 +43,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     DropdownModule,
     MultiSelectModule,
     FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
+      ReactiveFormsModule,
   ],
   providers: [
     {
